@@ -1,12 +1,9 @@
 from django.urls import path
-from base.views import user_views as views
+from base.views import order_views as views
 
 
 urlpatterns = [
-    path('users/login/', views.MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('add/', views.addOrderItems, name='orders-add'),
     
-    path('register/', views.registerUser, name="register"),
-    path('profile/', views.getUserProfile, name="users-profile"),
-    path('', views.getUsers, name="users"),
-]
 
+]

@@ -10,6 +10,12 @@ import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
+
+
+
+
+
+
 function RegisterScreen() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");

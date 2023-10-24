@@ -11,7 +11,6 @@ import {
   Form,
   Button,
   Card,
-  NavbarBrand,
 } from "react-bootstrap";
 import Message from "../components/Message";
 import { useNavigate } from "react-router-dom";
@@ -39,7 +38,7 @@ function CartScreen() {
     dispatch(removeFromCart(id));
   };
   const checkoutHandler = () => {
-    navigate("/login?redirect=shipping");
+    navigate("/shipping");
   };
 
   return (
@@ -72,7 +71,7 @@ function CartScreen() {
                         )
                       }
                     >
-                      {[...Array(item.countInStock).keys()].map((x) => (
+                      {item.countInStock > 0 && [...Array(item.countInStock).keys()].map((x) => (
                         <option key={x + 1} value={x + 1}>
                           {x + 1}
                         </option>
